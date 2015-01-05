@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DSStepper" customModule="DSStepper">
+            <connections>
+                <outlet property="decrementButton" destination="LWj-ih-k4D" id="k0y-7f-ksC"/>
+                <outlet property="incrementButton" destination="HHc-iv-4Ia" id="7PF-Yv-Gvv"/>
+                <outlet property="valueLabel" destination="t8u-6M-2aC" id="zEn-JF-m9w"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHc-iv-4Ia">
+                    <rect key="frame" x="316" y="0.0" width="284" height="600"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="+">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="tapIncrementButton:" destination="-1" eventType="touchUpInside" id="90x-n0-hxC"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8u-6M-2aC">
+                    <rect key="frame" x="294" y="288" width="11.5" height="24"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWj-ih-k4D">
+                    <rect key="frame" x="0.0" y="0.0" width="284" height="600"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="-">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="tapDecrementButton:" destination="-1" eventType="touchUpInside" id="zxF-ZY-P4y"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="HHc-iv-4Ia" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7V5-A0-tmr"/>
+                <constraint firstItem="t8u-6M-2aC" firstAttribute="leading" secondItem="LWj-ih-k4D" secondAttribute="trailing" constant="10" id="9xs-aa-Kea"/>
+                <constraint firstAttribute="trailing" secondItem="HHc-iv-4Ia" secondAttribute="trailing" id="BAe-yM-fkT"/>
+                <constraint firstAttribute="bottom" secondItem="t8u-6M-2aC" secondAttribute="bottom" id="FNm-bV-7wj"/>
+                <constraint firstAttribute="bottom" secondItem="LWj-ih-k4D" secondAttribute="bottom" id="GSK-Wv-d4v"/>
+                <constraint firstAttribute="trailing" secondItem="LWj-ih-k4D" secondAttribute="trailing" id="Pa9-7L-PaM"/>
+                <constraint firstItem="t8u-6M-2aC" firstAttribute="leading" secondItem="HHc-iv-4Ia" secondAttribute="trailing" constant="5" id="Qi1-Qs-Z70"/>
+                <constraint firstItem="t8u-6M-2aC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="R1K-S8-fcN"/>
+                <constraint firstItem="HHc-iv-4Ia" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Udz-kO-UuV"/>
+                <constraint firstAttribute="centerY" secondItem="t8u-6M-2aC" secondAttribute="centerY" id="Vb0-KK-VlU"/>
+                <constraint firstItem="LWj-ih-k4D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WB3-NW-Vcw"/>
+                <constraint firstItem="LWj-ih-k4D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YuD-ji-ty4"/>
+                <constraint firstAttribute="centerX" secondItem="t8u-6M-2aC" secondAttribute="centerX" id="ZwJ-wU-tVh"/>
+                <constraint firstAttribute="bottom" secondItem="HHc-iv-4Ia" secondAttribute="bottom" id="bdk-MB-aPl"/>
+                <constraint firstItem="HHc-iv-4Ia" firstAttribute="leading" secondItem="t8u-6M-2aC" secondAttribute="trailing" constant="10" id="hXX-9W-IBB"/>
+                <constraint firstItem="LWj-ih-k4D" firstAttribute="leading" secondItem="t8u-6M-2aC" secondAttribute="trailing" constant="5" id="xgB-I9-86u"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Pa9-7L-PaM"/>
+                    <exclude reference="xgB-I9-86u"/>
+                    <exclude reference="7V5-A0-tmr"/>
+                    <exclude reference="FNm-bV-7wj"/>
+                    <exclude reference="Qi1-Qs-Z70"/>
+                    <exclude reference="R1K-S8-fcN"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>
