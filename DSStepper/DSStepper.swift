@@ -20,16 +20,16 @@ import UIKit
         configureView()
     }
 
-    @IBInspectable var maximumValue: NSInteger = 100
-    @IBInspectable var minimumValue: NSInteger = 0
+    @IBInspectable var maximumValue: Int = 100
+    @IBInspectable var minimumValue: Int = 0
     
-    @IBInspectable var value: NSInteger = 0 {
+    @IBInspectable var value: Int = 0 {
         didSet {
             updateLabel()
         }
     }
     
-    @IBInspectable var textColor: UIColor! = UIColor.blackColor() {
+    @IBInspectable var textColor: UIColor = UIColor.blackColor() {
         didSet {
             updateColors()
         }
@@ -47,7 +47,7 @@ import UIKit
         }
     }
     
-    override var tintColor: UIColor! {
+    override var tintColor: UIColor? {
         didSet {
             updateColors()
         }
@@ -69,32 +69,32 @@ import UIKit
     func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "DSStepper", bundle: bundle)
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as UIView
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         return view
     }
     
-    @IBAction func tapIncrementButton(sender: UIButton) {
-        if self.value != self.maximumValue {
-            self.value += 1;
+    @IBAction func tappedIncrementButton(sender: UIButton) {
+        if value != maximumValue {
+            value += 1;
             updateLabel()
         }
     }
     
-    @IBAction func tapDecrementButton(sender: UIButton) {
-        if self.value != self.minimumValue {
-            self.value -= 1;
+    @IBAction func tappedDecrementButton(sender: UIButton) {
+        if value != minimumValue {
+            value -= 1;
             updateLabel()
         }
     }
 
     private func updateLabel() {
-        self.valueLabel.text = String(self.value)
+        valueLabel.text = String(value)
         updateButtons()
     }
 
     private func updateButtons() {
-        self.incrementButton.enabled = self.value < self.maximumValue
-        self.decrementButton.enabled = self.value > self.minimumValue
+        incrementButton.enabled = value < maximumValue
+        decrementButton.enabled = value > minimumValue
     }
     
     private func updateLayer() {
@@ -104,9 +104,11 @@ import UIKit
     }
     
     private func updateColors() {
-        self.incrementButton.tintColor = self.tintColor
-        self.decrementButton.tintColor = self.tintColor
-        self.valueLabel.textColor = self.textColor
+        if let tintColor = tintColor {
+            incrementButton.tintColor = tintColor
+            decrementButton.tintColor = tintColor
+        }
+        valueLabel.textColor = textColor
     }
     
 }
